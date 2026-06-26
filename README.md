@@ -1,5 +1,30 @@
 # AWS Client VPN Private Access Lab README
 
+## Table of Contents
+
+- [Goal](#goal)
+- [Prerequisites](#1-prerequisites)
+- [Create certificates](#2-create-certificates)
+  - [Create the CA](#create-the-ca)
+  - [Create the server certificate](#create-the-server-certificate)
+  - [Create the client certificate](#create-the-client-certificate)
+- [Import certificates to ACM](#3-import-certificates-to-acm)
+- [Create the Client VPN endpoint](#4-create-the-client-vpn-endpoint)
+- [Associate a subnet](#5-associate-a-subnet)
+- [Security Group](#6-security-group)
+- [Authorization rule](#7-authorization-rule)
+- [Route table](#8-route-table)
+- [Download client config](#9-download-client-config)
+- [Embed client cert and key in the OVPN file](#10-embed-client-cert-and-key-in-the-ovpn-file)
+- [MTU fix (optional)](#11-mtu-fix-optional)
+- [Windows connect](#12-windows-connect)
+- [Linux connect](#13-linux-connect)
+- [Test private EC2 access](#14-test-private-ec2-access)
+- [Test Kubernetes API access](#15-test-kubernetes-api-access)
+- [Notes and missing requirements](#16-notes-and-missing-requirements)
+- [Troubleshooting](#16-troubleshooting)
+- [Production flow](#production-flow)
+
 ## Goal
 
 Access private AWS resources (EC2, Kubernetes API server, or private EKS endpoint) from a laptop using AWS Client VPN.
